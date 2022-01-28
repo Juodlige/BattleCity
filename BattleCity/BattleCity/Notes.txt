@@ -1,0 +1,51 @@
+//Notes
+
+//type 1 - player
+//type 2 - enemy tank
+
+//Board size:
+//width 13 tiles
+//height  13 tiles
+//Player spawn x=5, y=13
+//Map pos       16,48
+
+//Enemy spawn 1,1;  7,1;  13,1
+//Map pos	  0,0;  24,0; 48,0
+
+
+//tile - 4x4
+//position - top left
+//E - empty
+//P - position
+//* - taken tank tile by P
+
+//direction
+//  0
+//3   1
+//  2
+
+//E E E E E E
+//E P * * * E
+//E * * * * E
+//E * * * * E
+//E * * * * E
+//E E E E E E
+
+//F - fires a shot, shot then moves in tanks direction axis (left, right, up, down)
+//E E E E E E
+//E P * * * E
+//E * F F * E
+//E * F F * E
+//E * * * * E
+//E E E E E E
+
+
+
+	//robot does random action
+	//0 - look up
+	//1 - look right
+	//2 - look down
+	//3 - look left
+	//4 - go forward
+	//5 - shoot
+	//6 - spawn
