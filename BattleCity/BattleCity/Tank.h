@@ -1,13 +1,11 @@
 #pragma once
 using namespace std;
 
-
-
 class Tank {
 protected:
 	int ID;
 	int health;
-	int shotCount, shotCooldown;
+	//int shotCount, shotCooldown;
 	int direction;
 	int nextAction; 
 	pair <int, int> pos; //X,Y
@@ -19,8 +17,8 @@ protected:
 public:
 
 	void move(pair <int, int> newpos) {
-		pos.first += newpos.first;
-		pos.second += newpos.second;
+		pos.first = pos.first + newpos.first;
+		pos.second = pos.second + newpos.second;
 	}
 
 	Tank(int newID) {
@@ -29,6 +27,7 @@ public:
 		pos.second = 99;
 		nextAction = 5;
 		direction = 2;
+		health = 1;
 	}
 
 	int doThings(int x) {	
@@ -70,7 +69,7 @@ public:
 private:
 	
 	int decideAction(int x) {
-		vector<int> actionPool = {0, 1, 2, 3, 4, 4, 5, 5, 5};
+		vector<int> actionPool = {0, 1, 2, 3, 4, 4, 4, 4, 5};
 
 		if (pos.first == 99) {
 			return 6;
